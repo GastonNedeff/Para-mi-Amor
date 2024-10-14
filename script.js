@@ -1,7 +1,7 @@
 document.getElementById('revealButton').addEventListener('click', function() {
     const extraMessage = document.getElementById('extraMessage');
 
-    // Cambia el estilo para mostrar el mensaje extra con animación de desvanecimiento
+    // Cambia el estilo para que se muestre con una animación de desvanecimiento
     extraMessage.style.display = 'block';
     extraMessage.style.opacity = '0';
     extraMessage.style.transition = 'opacity 1s ease-in-out';
@@ -9,7 +9,7 @@ document.getElementById('revealButton').addEventListener('click', function() {
     // Activar la transición de opacidad
     setTimeout(() => {
         extraMessage.style.opacity = '1';
-    }, 10); // Pequeño retraso para activar la transición
+    }, 10); // Un pequeño retraso para activar la transición
 
     // Animación de rebote para el botón
     const button = this; // Referencia al botón
@@ -34,16 +34,34 @@ document.getElementById('revealButton').addEventListener('click', function() {
 });
 
 // Manejo de eventos táctiles para dispositivos móviles
-const revealButton = document.getElementById('revealButton');
-
-revealButton.addEventListener('touchstart', function() {
+document.getElementById('revealButton').addEventListener('touchstart', function() {
     // Para una mejor respuesta táctil, se puede agregar un efecto visual
     this.style.transform = 'scale(1.1)';
 });
 
-revealButton.addEventListener('touchend', function() {
+document.getElementById('revealButton').addEventListener('touchend', function() {
     // Regresar al tamaño original al soltar
     setTimeout(() => {
         this.style.transform = 'scale(1)';
     }, 200);
 });
+
+// Agregar soporte para que los emojis decorativos no sean clicables
+document.querySelectorAll('.decorative-emoji').forEach(emoji => {
+    emoji.style.pointerEvents = 'none'; // Desactiva la interacción del ratón
+});
+
+// Función para mostrar el mensaje extra con un efecto de desvanecimiento
+function showExtraMessage() {
+    const extraMessage = document.getElementById('extraMessage');
+    extraMessage.style.opacity = '0';
+    extraMessage.style.display = 'block';
+
+    setTimeout(() => {
+        extraMessage.style.opacity = '1';
+    }, 100); // Un pequeño retraso para la transición de opacidad
+}
+
+// Llama a showExtraMessage cuando se hace clic en el botón
+document.getElementById('revealButton').addEventListener('click', showExtraMessage);
+
