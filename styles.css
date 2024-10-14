@@ -339,4 +339,19 @@ button {
     .decorative-emoji {
         font-size: 2em; /* Reducir tamaño de los emojis en móvil */
     }
+
+    .bubbles .bubble {
+        width: 30px; /* Ajustar tamaño de las burbujas en móvil */
+        height: 30px;
+    }
+
+    .jellyfish {
+        width: 40px; /* Reducir tamaño de medusas en móvil */
+        height: 60px;
+    }
+
+    .mushroom {
+        width: 30px; /* Reducir tamaño de los hongos en móvil */
+        height: 30px;
+    }
 }
