@@ -266,72 +266,95 @@ button:hover {
 }
 
 .emoji-flower {
-    top: 10%;
-    left: 5%;
-    transform: rotate(20deg);
+    top: 10px;
+    left: 10px;
+    animation: bounce 2s infinite; 
 }
 
 .emoji-mushroom {
-    bottom: 15%;
-    right: 5%;
-    transform: rotate(-20deg);
+    top: 10px;
+    right: 10px;
+    animation: bounce 2s infinite; 
 }
 
 .emoji-flower-bottom {
-    bottom: 10%;
-    left: 25%;
-    transform: rotate(15deg);
+    bottom: 10px;
+    left: 10px;
+    animation: bounce 2s infinite; 
 }
 
 .emoji-mushroom-bottom {
-    bottom: 10%;
-    right: 20%;
-    transform: rotate(-10deg);
+    bottom: 10px;
+    right: 10px;
+    animation: bounce 2s infinite; 
 }
 
 .emoji-heart {
-    bottom: 5%;
-    left: 20%;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .emoji-star {
-    top: 5%;
-    right: 20%;
+    top: 20px;
+    right: 50%;
+    transform: translateX(50%);
 }
 
-/* Media Queries para mejorar la visualización en móviles */
-@media (max-width: 768px) {
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Ajustar el botón para que no afecte a los emojis */
+button {
+    position: relative; 
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 600px) {
     h1 {
-        font-size: 2.5em; /* Reduce el tamaño del título en móviles */
+        font-size: 2.5em; /* Disminuir tamaño de fuente en móvil */
     }
 
-    .message,
-    .extra-message {
-        font-size: 1.1em; /* Ajusta el tamaño de la fuente en móviles */
-    }
-
-    button {
-        font-size: 1.2em; /* Ajusta el tamaño del botón en móviles */
-        padding: 10px 20px; /* Ajusta el padding del botón */
-    }
-}
-
-@media (max-width: 480px) {
     .container {
-        padding: 20px; /* Reduce el padding en móviles pequeños */
+        padding: 20px; /* Menos padding en dispositivos móviles */
+        max-width: 90%; /* Ancho máximo adaptado */
     }
 
-    h1 {
-        font-size: 2em; /* Reduce aún más el tamaño del título */
-    }
-
-    .message,
-    .extra-message {
-        font-size: 1em; /* Reduce el tamaño de la fuente en móviles pequeños */
+    .message {
+        font-size: 1.2em; /* Disminuir tamaño de fuente del mensaje */
+        padding: 10px; /* Menos padding */
     }
 
     button {
-        font-size: 1em; /* Ajusta el tamaño del botón en móviles pequeños */
-        padding: 8px 15px; /* Ajusta el padding del botón */
+        font-size: 1.2em; /* Disminuir tamaño de fuente del botón */
+        padding: 10px 20px; /* Ajustar el padding del botón */
+        width: 100%; /* Botón ocupa el 100% del ancho en móvil */
+    }
+
+    .heart {
+        width: 40px; 
+        height: 35px; 
+    }
+
+    /* Ajustes para los emojis */
+    .decorative-emoji {
+        font-size: 2em; /* Reducir tamaño de los emojis en móvil */
+    }
+
+    .bubbles .bubble {
+        width: 30px; /* Ajustar tamaño de las burbujas en móvil */
+        height: 30px;
+    }
+
+    .jellyfish {
+        width: 40px; /* Reducir tamaño de medusas en móvil */
+        height: 60px;
+    }
+
+    .mushroom {
+        width: 30px; /* Reducir tamaño de los hongos en móvil */
+        height: 30px;
     }
 }
