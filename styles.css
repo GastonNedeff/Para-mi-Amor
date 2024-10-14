@@ -3,10 +3,10 @@ body {
     font-family: 'Georgia', serif;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Cambia a flex-start para evitar centrar verticalmente */
+    height: auto; /* Cambiado de 100vh a auto */
     margin: 0;
-    overflow: hidden;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
     position: relative; 
 }
 
@@ -41,6 +41,7 @@ body {
     position: relative;
     animation: fadeIn 1.5s ease-out;
     z-index: 2;
+    margin-top: 20px; /* Agregado un margen superior */
 }
 
 @keyframes fadeIn {
