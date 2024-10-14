@@ -162,6 +162,8 @@ button {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     animation: buttonFadeIn 1.5s forwards;
+    width: 80%; /* Asegúrate de que el botón ocupe un ancho adecuado */
+    max-width: 300px; /* Limita el ancho máximo del botón */
 }
 
 @keyframes buttonFadeIn {
@@ -328,6 +330,7 @@ button {
     button {
         font-size: 1.2em; /* Disminuir tamaño de fuente del botón */
         padding: 10px 20px; /* Ajustar el padding del botón */
+        width: 100%; /* Botón ocupa el 100% del ancho en móvil */
     }
 
     .heart {

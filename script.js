@@ -1,7 +1,7 @@
 document.getElementById('revealButton').addEventListener('click', function() {
     const extraMessage = document.getElementById('extraMessage');
 
-    // Cambia el estilo para que se muestre con una animación de desvanecimiento
+    // Cambia el estilo para mostrar el mensaje extra con animación de desvanecimiento
     extraMessage.style.display = 'block';
     extraMessage.style.opacity = '0';
     extraMessage.style.transition = 'opacity 1s ease-in-out';
@@ -9,7 +9,7 @@ document.getElementById('revealButton').addEventListener('click', function() {
     // Activar la transición de opacidad
     setTimeout(() => {
         extraMessage.style.opacity = '1';
-    }, 10); // Un pequeño retraso para activar la transición
+    }, 10); // Pequeño retraso para activar la transición
 
     // Animación de rebote para el botón
     const button = this; // Referencia al botón
@@ -34,12 +34,14 @@ document.getElementById('revealButton').addEventListener('click', function() {
 });
 
 // Manejo de eventos táctiles para dispositivos móviles
-document.getElementById('revealButton').addEventListener('touchstart', function() {
+const revealButton = document.getElementById('revealButton');
+
+revealButton.addEventListener('touchstart', function() {
     // Para una mejor respuesta táctil, se puede agregar un efecto visual
     this.style.transform = 'scale(1.1)';
 });
 
-document.getElementById('revealButton').addEventListener('touchend', function() {
+revealButton.addEventListener('touchend', function() {
     // Regresar al tamaño original al soltar
     setTimeout(() => {
         this.style.transform = 'scale(1)';
